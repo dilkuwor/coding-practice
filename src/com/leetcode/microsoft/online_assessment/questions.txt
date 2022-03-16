@@ -1,0 +1,15 @@
+Min Deletions to Make Frequency of Each Letter Unique -done
+Min Swaps to Make Palindrome
+Min Steps to Make Piles Equal Height
+Largest K such that both K and -K exist in array
+Max Length of a Concatenated String with Unique Characters
+Unique Integers That Sum Up To 0 - done
+Partition array into N subsets with balanced sum
+Jump Game [Experienced]
+Meeting Rooms II - done
+Count Visible Nodes in Binary Tree - done
+Largest Alphabetic Character
+
+
+
+https://leetcode.com/problems/parallel-courses/

@@ -1,0 +1,9 @@
+
+Given a wrong implementation of 'Find min in array', and int N, return an array of N values such that the program fails for sure. Counterexample.
+Given a string of lower case characters, return the number of substrings that can be formed such that every string only has unique characters. "dddd" is 4. "dddde" is also 4.
+
+
+
+
+
+Given a string, what is the minimum number of adjacent swaps required to convert a string into a palindrome. If not possible, return -1.
