@@ -35,3 +35,15 @@ Longest Palindromic Subsequence(LPS) - DP
 1092. Shortest Common Supersequence
 1062. Longest Repeating Substring
 516. Longest Palindromic Subsequence
+
+
+#################
+list.stream()
+.mapToInt(Integer::intValue)
+.toArray();
+
+lst.toArray(new String[0]);
+
+Arrays.sort(connections, (a, b) -> a[2] - b[2]);
+
+Arrays.sort(a, Collections.reverseOrder());

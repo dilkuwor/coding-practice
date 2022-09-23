@@ -1,5 +1,7 @@
 package com.leetcode.practice;
 
+import com.leetcode.ListNode;
+
 /**
  * 1->2->4->5->NULL
  * NULL<-1<-2<-4<-5
@@ -58,24 +60,3 @@ public class ReverseLinkedListDemo {
     }
 }
 
- class ListNode{
-    int val;
-    ListNode next;
-    ListNode(int x){ val = x;};
-
-     @Override
-     public String toString() {
-        StringBuilder buffer = new StringBuilder();
-         buffer.append("{");
-         buffer.append(val);
-        while (next!=null){
-            if(next!=null){
-                buffer.append(","+next.val);
-            }
-            next = next.next;
-
-        }
-         buffer.append("}");
-        return buffer.toString();
-     }
- }

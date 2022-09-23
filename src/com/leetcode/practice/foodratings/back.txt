@@ -1,0 +1,98 @@
+package com.leetcode.practice.foodratings;
+
+
+import java.util.PriorityQueue;
+import java.util.Stack;
+
+public class FoodRatings {
+    @Override
+    public String toString()
+    {
+        StringBuilder bldr = new StringBuilder();
+        while(!pq.isEmpty())
+        {
+            bldr.append(pq.poll().toString());
+        }
+        System.out.println(bldr);
+        return bldr.toString();
+    }
+    PriorityQueue<Pair> pq;
+    public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {
+        pq  =  new PriorityQueue<>((n1, n2) -> {
+            // compare n1 and n2
+            if(n1.rating == n2.rating)
+                return n1.food.compareTo(n2.food);
+            return Integer.compare(n2.rating, n1.rating);
+        });
+        for(int i = 0;i<foods.length;i++)
+        {
+
+            pq.offer(new Pair(foods[i], cuisines[i],ratings[i]));
+        }
+    }
+    public void changeRating(String food, int newRating) {
+
+        Stack<Pair> st = new Stack<>();
+
+        while(!pq.isEmpty())
+        {
+            Pair curr = pq.poll();
+            if(curr.food.equals(food))
+            {
+                pq.offer(new Pair(food, curr.cuisine, newRating));
+                break;
+            }
+            else {
+                st.push(curr);
+            }
+        }
+        while (!st.isEmpty())
+        {
+            pq.offer(st.pop());
+        }
+    }
+
+    public String highestRated(String cuisine) {
+
+        Stack<Pair> st = new Stack<>();
+        Pair curr = null;
+        while(!pq.isEmpty())
+        {
+            curr = pq.peek();
+            if(curr.cuisine.equals(cuisine))
+            {
+                break;
+            }
+            else {
+                st.push(pq.poll());
+            }
+        }
+        while (!st.isEmpty())
+        {
+            pq.offer(st.pop());
+        }
+        if(curr!=null)
+            return curr.food;
+        else
+            return "";
+    }
+}
+
+class Pair
+{
+    public String cuisine;
+    public int rating;
+    public String food;
+    public Pair(String f, String c, int r)
+    {
+        this.food = f;
+        this.cuisine = c;
+        this.rating = r;
+    }
+
+    @Override
+    public String toString(){
+        return "\nFood: "+this.food+", Cuisine: "+this.cuisine+" Ratings: "+this.rating;
+    }
+}
+

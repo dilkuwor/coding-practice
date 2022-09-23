@@ -1,6 +1,6 @@
 package com.leetcode.practice;
 
-import java.util.List;
+import com.leetcode.ListNode;
 
 public class PalindromeLinkedListDemo {
     public static void main(String[] args) {
